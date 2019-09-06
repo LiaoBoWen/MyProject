@@ -1,0 +1,53 @@
+1、每一行为一条文本 预处理之后输入的X=[[seq1],[seq2],[seq3],...] y=[y1,y2,y3,...]
+2、word2index,（可以使用Counter来提取频率最高的vocab_size）index2word ===> 这里的第一个单词使用UNK来标志，为什么？ 还有建立label2index,index2label 但是这里使用的enumerate来构建的label2index，后面padding的时候不存在的词使用0来不全，所以这里的enumerate的起始值设置的不对吧？
+3、padding X and y, y==>ont-hot
+4、split data 切片
+5、开始建立计算图
+6、首先gloabl_step，current_epoch必须使用tensor来创建，（global_step可以用minimize的时候传进去）因为这么做的话下次读取的时候可以读取到当前步继续训练
+6、使用0.5的dropout_keep_prob经验值
+7、开始训练，循环训练epoch_num次，每次都打乱顺序，每次都分批次训练数据  !!有必要考虑参数的设置问题，参数之间的设置之间的关系   一般来说，在合理的范围之内，越大的batch_size使下降方向越准确，震荡越小；batch_size 如果过大，则可能会出现局部最优的情况。小的bath_size引入的随机性更大，难以达到收敛，极少数情况下可能会效果变好。
+8、通过计算图类获取保存的变量
+9、对于word2index或者别的我们可以使用这个方法  ====>   https://blog.csdn.net/wcy23580/article/details/84885734#3__88
+如下：
+>>>from keras.preprocessing.text import Tokenizer
+Using TensorFlow backend.
+
+#  创建分词器 Tokenizer 对象
+>>>tokenizer = Tokenizer()
+
+#  text
+>>>text = ["今天 北京 下 雨 了", "我 今天 加班"]
+
+#  fit_on_texts 方法
+>>>tokenizer.fit_on_texts(text)
+
+#  word_counts属性
+>>>tokenizer.word_counts
+OrderedDict([('今天', 2),
+             ('北京', 1),
+             ('下', 1),
+             ('雨', 1),
+             ('了', 2),
+             ('我', 1),
+             ('加班', 1)])
+
+#  word_docs属性
+>>>tokenizer.word_docs
+defaultdict(int, {'下': 1, '北京': 1, '今天': 2, '雨': 1, '了': 2, '我': 1, '加班': 1})
+
+#  word_index属性
+>>>tokenizer.word_index
+{'今天': 1, '了': 2, '北京': 3, '下': 4, '雨': 5, '我': 6, '加班': 7}
+
+#  document_count属性
+>>>tokenizer.document_count
+2
+
+
+>>>tokenizer.texts_to_sequences(["下 雨 我 加班"])
+[[4, 5, 6, 7]]
+
+>>>keras.preprocessing.sequence.pad_sequences(tokenizer.texts_to_sequences(["下 雨 我 加班"]), maxlen=20)
+array([[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 5, 6, 7]],dtype=int32)
+---以上方法都无法处理未登录词（这些方法都不会报错，直接无视）
+10、对于未知词，我们通过使用word2index[UNK]=0进行操作，但是我们可以使用UNK.index=1,伪单词PAD.index=0，最后通过pad_sequence进行补零，随之而来的我们的word2index也要变化，下边要从2开始

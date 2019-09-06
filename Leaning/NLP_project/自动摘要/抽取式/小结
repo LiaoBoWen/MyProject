@@ -1,0 +1,1 @@
+使用的pageRank算法，对于传统的textRank，使用的是以n-gram计算相似度作为边的，这里采用word2vec作为计算相似度作为边

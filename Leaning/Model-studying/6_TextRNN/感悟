@@ -1,0 +1,12 @@
+===== 由于数据量过大，这里对数据进行了裁剪，batch_size也由1024-->200~ =====
+1、github很多的生成词向量的方法都是使用tf.nn.emebdding_lookup,但是可以试着使用word2vec的方法
+2、对于含有多个label的文本可以参考data_util_zhihu的一个方法
+3、双向LSTM做隐层是标配，最后输出的时候可以讲最后一层的输出作为FC的输入，也可以将Bi-LSTM最后的state作为第二层LSTM的输入，最后进行FC
+4、这里出现了NCE—LOSS进行误差的计算，但是没有采取这种方法
+5、loss = loss + tf.add_n([tf.nn.l2_loss(v) for v in tf.trainable_variables() if 'bias' not in v.name]) * l2_lambda
+6、循环加步长进行batch的实现
+7、对于显存不足的情况可以通过减小batch_size值，但是可能会减小效率
+8、训练模型的时候很慢，准确度很低
+9、存储模型的时候，step和epoch都定义到图里面去而不是通过python的变量定义，这样重新加载训练模型的时候可以直接跳转到上次的进度
+10、对于LSTM,输入的维度有三维就行，不需要进行维度的变换   ==> [batch_size,sequence_length,embedding]
+11、from tflearn.data_utils import pad_sequences 进行数据的裁剪,输入是数值型，所以需要进行word2index

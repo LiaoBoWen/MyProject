@@ -1,0 +1,2 @@
+model_checkpoint_path: "/media/liao/Data/My_Projects/Leaning/Model-studying/5_TextCNN/runs/1562648408/checkpoints/save_net.ckpt"
+all_model_checkpoint_paths: "/media/liao/Data/My_Projects/Leaning/Model-studying/5_TextCNN/runs/1562648408/checkpoints/save_net.ckpt"

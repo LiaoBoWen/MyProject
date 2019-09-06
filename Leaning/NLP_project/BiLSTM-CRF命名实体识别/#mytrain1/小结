@@ -1,0 +1,2 @@
+1、学习率的衰减，这里提现了global_step的重要性：tf.train.exponential_decay(self.learn_rate,self.global_step,15000,0.99,staircase=True)
+2、膨胀卷积网络（IDCNN）

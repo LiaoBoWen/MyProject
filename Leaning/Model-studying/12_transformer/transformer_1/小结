@@ -1,0 +1,38 @@
+1、为什么reuse有时是tf.AUTO_REUSE
+2、很多去最后一个维度的地方，这里是获取词向量的维度，transformer的encoder需要注意那个维度
+3、tf.tile() 类似repeat的方法，但是更加的高级  [N,1,T_k] 可以使用这个进行repeat[1,T_q,1]，维度对应
+4、get_shape()可以得到一个tuple，但是tf.shape()得到的是tensor
+5、summary() 的使用
+6、数据预处理放到CPU处理，不然还没有开始训练GPU内存就不够了
+
+Transformer结构方面：https://baijiahao.baidu.com/s?id=1627587324043258333&wfr=spider&for=pc
+—————————————————————encoder部分—————————————————————
+首先，block与head是不一样的，每一个block是一个encode部分，Transformer一共有6个block
+7、encode之前进行了scale（*= num_unit** 0.5）
+8、位置编码通过sin、cos计算,位置编码部分的mask为什么是保留输入时候为0的部分，不为零的部分使用位置编码替换，最后把位置编码和embedding相加
+9、位置编码之后进行dropout
+10、多头注意力的切分是把词向量的那个维度进行平均切分，分别计算每个attention，最后按batch所在的维度进行concat(详见Q、K、V到_Q、_K、_V的变化过程)
+11、每个encoder的的注意力的计算过程： Q.dot(K) -> scale(sqrt) -> mask(outputs_by_key) -> **** -> mask(output_by_query) -> dropout -> outputs.dot(V)
+12、多头attention的连接之后与query进行连接（残差部分），然后经过layer-norm（减均值除以方差，为了防止分母为零，增加epsilon平滑，最后的结果乘gamma[1初始化]再加beta[0初始化]）,然后和query相加（残差）得到outputs
+13、outputs经过Feed_forward层（做两次dense，最后一次的时候维度变回outputs的维度），再与outputs做残差输出
+
+—————————————————————decoder部分—————————————————————
+14、decoder与encoder的在多头注意力的causality,在计算这里的future的mask的时候使用了一个技巧，就是取一个下三角，首先tf.ones_like()方法生成了一个（1，T, C）维度的全是1的张量，C表示的是embedding的维度，tf.linalg.LinearOperatorLowerTriangular()这个方法把这个全是1的张量的右上角变成了0，再用tf.tile()方法把这个mask变回（N, T, C）维度的，最后依旧采用tf.where()方法来做过滤。详细可见：https://blog.csdn.net/u012526436/article/details/86519381
+15、todo 解码部分与encoder的操作类似，但是在最后的时候在所有的最后一维的下标为1的部分插入了0，这是为什么
+
+
+MASK部分： https://blog.csdn.net/u012526436/article/details/86519381
+1、position-encode，encoder，decoder都含有mask，方式不一样，仔细研究！
+2、MASK_key:对最后一个维度（词向量切割后的维度）绝对值求和，然后增加第二个维度（input的query所在的维度，以为此时query的维度没有），tile之后得到的mask可以对input（注意，此时的input是Q和K相乘之后的结果）通过使用where方法进行遮盖；MASK_query:对最后的一个维度（词向量切割后的维度）的绝对值求和，然后增加最后一个维度（同key的理），tile复制，得到的mask最后应用到query上，应用的方式和key的不一样，是使用的对应相乘的方法
+   它是想让那些key值的unit为0的key对应的attention score极小，这样在加权计算value的时候相当于对结果不造成影响。然后定义一个和outputs同shape的paddings，该tensor每个值都设定的极小。用where函数比较，当对应位置的key_masks值为0也就是需要mask时，outputs的该值（attention score）设置为极小的值（利用paddings实现）
+3、causality: causality参数告知我们是否屏蔽未来序列的信息（解码器self attention的时候不能看到自己之后的那些信息），这里即causality为True时的屏蔽操作。
+   三角阵tril，对于每一个T_q,凡是那些大于它角标的T_k值全都为0，这样作为mask就可以让query只取它之前的key（self attention中query即key）。由于该规律适用于所有query，接下来仍用tile扩展堆叠其第一个维度，构成masks，shape为(h*N, T_q,T_k).
+4、queries:mask也是要将那些初始值为0的queryies（比如一开始句子被PAD填充的那些位置作为query） mask住
+
+train部分：
+1、再把y送入softmax计算loss的时候进行了平滑处理，平滑公式：(1 - epsilon) * inputs + (epsilon / V)  这里的V是inputs的shape的最后一维的大小
+2、最后还把loss作了平均，目的是为了把PAD的无意义值去除
+
+
+新方法：
+1、tf.py_func()类似pandas的apply函数

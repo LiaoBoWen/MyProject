@@ -1,0 +1,7 @@
+需要注意的的是，target样本预处理的时候，最后的部分需要加上<EOS>表示句子结束；
+训练的时候target开头添加<GO>表示句子开始（inference预测第一个单词），
+并且target的最后一个单词要去除，因为最后一个单词是有inference得到的所以target并不需要传入
+
+
+TrainingHelper是训练的时候使用，每个cell单元都是由target传入，而不是inference的h值，这样可以提高准确性
+GreedEmbeddingHelper是预测的时候

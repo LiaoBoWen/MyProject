@@ -1,0 +1,3 @@
+1、使用的VocabProcessor先进行单词token化 输入：空格分开的句子的列表，输出：id，这里我们对pad和oov都是用0替换，位的是之后的word2vec不出现oov的情况，而且对于oov的word2vec直接补0也是一种方法，所以这是可行的，但是不知道的是0的word2vec是什么模样
+2、使用的word2vec进行向量化，这里注意oov问题，我们使用第一步的策略解决。但也测试过林一种方法：判断是（pad或者unk）进行word2vec都变成0的话准确率低了一半！初步判断
+3、在全部数据上效果比embedding_lookup好一点，而且更快

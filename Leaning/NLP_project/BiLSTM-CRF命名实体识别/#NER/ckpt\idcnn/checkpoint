@@ -1,0 +1,2 @@
+model_checkpoint_path: "/media/liao/Data/My_Projects/Leaning/NLP_project/#BiLSTM-CRF\345\221\275\345\220\215\345\256\236\344\275\223\350\257\206\345\210\253/NER/ckpt\\idcnn/-59"
+all_model_checkpoint_paths: "/media/liao/Data/My_Projects/Leaning/NLP_project/#BiLSTM-CRF\345\221\275\345\220\215\345\256\236\344\275\223\350\257\206\345\210\253/NER/ckpt\\idcnn/-59"

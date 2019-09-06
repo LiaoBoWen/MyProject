@@ -1,0 +1,20 @@
+# https://github.com/LiaoBoWen/zh-NER-TF/blob/master/model.py
+# https://github.com/buppt/ChineseNER
+# 注释的部分使用的是https://github.com/LiaoBoWen/NER
+# 第一个版本是://github.com/buppt/ChineseNER/tree/master/tensorflow
+# 这个项目是：https://github.com/shiyybua/NER
+# 最好是看这个：https://github.com/Determined22/zh-NER-TF
+
+
+
+Q:为什么使用LSTM-CRF的结构
+A:在解决序列标注问题时，待标注序列的前后关系是研究的重点，而标注序列的前后关系，可以通过BiLSTM(Bidirectional LSTM)来获得。
+  BiLSTM借助存储单元的结构来保存较长的依赖关系，并且通过输入门、输出门和遗忘门来调整之前状态对当前存储单元状态的影响。
+  然而BiLSTM缺乏在整句层面的特征分析，所以需要借助条件随机场(Conditional Random Fields, CRF)的帮助。
+  CRF将序列标注的重点放在句子级别上，根据特征模板来进行标注，通过Viterbi解码来获得最优解。
+  然而CRF有提取特征困难，适用性不够广的问题，因此可以将CRF和LSTM结合起来，这样在保证能够提取足够整句特征的同时，使用有效的序列标注方法进行标注。
+
+  文本输入经过BiLSTM之后，会把前后向的隐藏态结果进行结合，生成BiLSTM的输出。
+  最后，将BiLSTM的输出喂给CRF作为输入，这样就形成了BiLSTM- CRF结构。
+  这种结构结合了BiLSTM和CRF的特点和优势：作为BiLSTM，它可以有效地保存整句的前后信息，提取句子中的特征信息；
+  作为CRF，它能够利用上下文的信息，进行具有很高准确率的序列标注。

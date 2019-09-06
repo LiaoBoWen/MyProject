@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8a37abf6-6c50-4f9b-aad0-7b9192b4475f" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Library_projects" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Ch_NER/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="518">
+              <caret line="103" selection-start-line="103" selection-end-line="103" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>pickle</find>
+      <find>data</find>
+      <find>pass</find>
+      <find>every_day</find>
+      <find>c=score&amp;a=getmatch&amp;stid={}&amp;round={}</find>
+      <find>team_dict</find>
+      <find>print</find>
+      <find>type</find>
+      <find>[INFO]55||get_tmp_data||stid</find>
+      <find>date_path</find>
+      <find>save</find>
+      <find>bi</find>
+      <find>dropout_prob</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/test_file.py" />
+        <option value="$PROJECT_DIR$/patch_for_shenglv/patch1.py" />
+        <option value="$PROJECT_DIR$/spider/read_flag.py" />
+        <option value="$PROJECT_DIR$/spider/patch_for_shenglv/read_flag.py" />
+        <option value="$PROJECT_DIR$/spider/patch_for_shenglv/set_flag.py" />
+        <option value="$PROJECT_DIR$/spider/patch_for_shenglv/config.json" />
+        <option value="$PROJECT_DIR$/spider/clawr.py" />
+        <option value="$PROJECT_DIR$/config.json" />
+        <option value="$PROJECT_DIR$/read_temp_data.py" />
+        <option value="$PROJECT_DIR$/spider/patch_for_shenglv/team_dict.json" />
+        <option value="$PROJECT_DIR$/spider/patch_for_shenglv/patch1.py" />
+        <option value="$PROJECT_DIR$/spider/intoDb.py" />
+        <option value="$PROJECT_DIR$/spider/patch_1.2.py" />
+        <option value="$PROJECT_DIR$/get_tmp_data.py" />
+        <option value="$PROJECT_DIR$/spider/team_dict.json" />
+        <option value="$PROJECT_DIR$/spider/clawer_1.py" />
+        <option value="$PROJECT_DIR$/spider_1.1/read_flag.py" />
+        <option value="$PROJECT_DIR$/spider_1.1/intoDb.py" />
+        <option value="$PROJECT_DIR$/ZN_NER/process_data.py" />
+        <option value="$PROJECT_DIR$/Ch_NER/CRF-bilstm.py" />
+        <option value="$PROJECT_DIR$/Ch_NER/data/main.py" />
+        <option value="$PROJECT_DIR$/Ch_NER/config.py" />
+        <option value="$PROJECT_DIR$/Ch_NER/model/test.py" />
+        <option value="$PROJECT_DIR$/Ch_NER/process_data.py" />
+        <option value="$PROJECT_DIR$/Ch_NER/test.py" />
+        <option value="$PROJECT_DIR$/Ch_NER/CRF_bilstm.py" />
+        <option value="$PROJECT_DIR$/Ch_NER/main.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="260" />
+    <option name="y" value="53" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Library_projects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Library_projects" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Library_projects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Library_projects" type="462c0819:PsiDirectoryNode" />
+              <item name="Ch_NER" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ZN_NER" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Ch_NER" />
+      <recent name="$PROJECT_DIR$/TiCai" />
+      <recent name="$PROJECT_DIR$/spider/rabish" />
+      <recent name="$PROJECT_DIR$/spider" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ZN_NER" />
+      <recent name="$PROJECT_DIR$/spider_1.1" />
+      <recent name="$PROJECT_DIR$/spider_1.1/saved_flag_/DE" />
+      <recent name="$PROJECT_DIR$/spider/new_spider" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.main">
+    <configuration name="CRF_bilstm" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Library_projects" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Ch_NER" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Ch_NER/CRF_bilstm.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="builtins" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Library_projects" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/.PyCharm2019.1/system/python_stubs/-436661671" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/.PyCharm2019.1/system/python_stubs/-436661671/builtins.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="config" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Library_projects" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Ch_NER" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Ch_NER/config.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Library_projects" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Ch_NER" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Ch_NER/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Library_projects" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Ch_NER/model" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Ch_NER/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.CRF_bilstm" />
+        <item itemvalue="Python.builtins" />
+        <item itemvalue="Python.config" />
+        <item itemvalue="Python.test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8a37abf6-6c50-4f9b-aad0-7b9192b4475f" name="Default Changelist" comment="" />
+      <created>1562464589088</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1562464589088</updated>
+      <workItem from="1562464590598" duration="2415000" />
+      <workItem from="1562467014354" duration="5305000" />
+      <workItem from="1562478484465" duration="24259000" />
+      <workItem from="1562504237649" duration="633000" />
+      <workItem from="1562546985490" duration="11579000" />
+      <workItem from="1562559462595" duration="666000" />
+      <workItem from="1562562609029" duration="6000" />
+      <workItem from="1562571204278" duration="165000" />
+      <workItem from="1562578108999" duration="578000" />
+      <workItem from="1562582771367" duration="16000" />
+      <workItem from="1562633287323" duration="99000" />
+      <workItem from="1562819325636" duration="4452000" />
+      <workItem from="1562823898105" duration="1228000" />
+      <workItem from="1563671036978" duration="2316000" />
+      <workItem from="1563712711244" duration="1837000" />
+      <workItem from="1563715505430" duration="1465000" />
+      <workItem from="1564359249113" duration="780000" />
+      <workItem from="1564447065922" duration="39629000" />
+      <workItem from="1564542839180" duration="1222000" />
+      <workItem from="1564544087207" duration="22057000" />
+      <workItem from="1564638659140" duration="65000" />
+      <workItem from="1564801793873" duration="8363000" />
+      <workItem from="1565567509713" duration="17000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="129152000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49945474" visible="true" weight="0.18060021" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" sideWeight="0.50054526" side_tool="true" weight="0.14186296" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286026" />
+      <window_info anchor="bottom" id="Debug" order="2" weight="0.41812226" />
+      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="5" weight="0.34061137" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3286026" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010718" side_tool="true" weight="0.22052401" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3286026" />
+      <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.4989282" weight="0.27074236" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="R Graphics" order="4" />
+      <window_info anchor="right" id="R Packages" order="5" />
+      <window_info anchor="right" id="Database" order="6" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49945474" visible="true" weight="0.1698821" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" sideWeight="0.50054526" side_tool="true" weight="0.14186296" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286026" />
+      <window_info anchor="bottom" id="Debug" order="2" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="5" weight="0.27074236" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3293348" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3293348" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.20174482" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="R Graphics" order="4" />
+      <window_info anchor="right" id="R Packages" order="5" />
+      <window_info anchor="right" id="Database" order="6" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Library_projects$process_data.coverage" NAME="process_data Coverage Results" MODIFIED="1564449589643" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ZN_NER" />
+    <SUITE FILE_PATH="coverage/Library_projects$config.coverage" NAME="config Coverage Results" MODIFIED="1564633066630" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ch_NER" />
+    <SUITE FILE_PATH="coverage/Library_projects$process_data__1_.coverage" NAME="process_data (1) Coverage Results" MODIFIED="1564631601217" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ch_NER" />
+    <SUITE FILE_PATH="coverage/Library_projects$read_temp_data.coverage" NAME="read_temp_data Coverage Results" MODIFIED="1562823610478" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Library_projects$test.coverage" NAME="test Coverage Results" MODIFIED="1564632102900" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ch_NER/model" />
+    <SUITE FILE_PATH="coverage/Library_projects$intoDb.coverage" NAME="intoDb Coverage Results" MODIFIED="1562821096804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/spider" />
+    <SUITE FILE_PATH="coverage/Library_projects$patch1.coverage" NAME="patch1 Coverage Results" MODIFIED="1562503940528" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/spider/patch_for_shenglv" />
+    <SUITE FILE_PATH="coverage/Library_projects$main.coverage" NAME="main Coverage Results" MODIFIED="1564803036396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ch_NER" />
+    <SUITE FILE_PATH="coverage/Library_projects$clawer1.coverage" NAME="clawer1 Coverage Results" MODIFIED="1562465085657" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/spider" />
+    <SUITE FILE_PATH="coverage/Library_projects$get_tmp_data.coverage" NAME="get_tmp_data Coverage Results" MODIFIED="1563671139420" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Library_projects$builtins.coverage" NAME="builtins Coverage Results" MODIFIED="1564802695711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/.PyCharm2019.1/system/python_stubs/-436661671" />
+    <SUITE FILE_PATH="coverage/Library_projects$read_flag.coverage" NAME="read_flag Coverage Results" MODIFIED="1563713376015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/spider_1.1" />
+    <SUITE FILE_PATH="coverage/Library_projects$test_file.coverage" NAME="test_file Coverage Results" MODIFIED="1562480266269" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Library_projects$set_flag.coverage" NAME="set_flag Coverage Results" MODIFIED="1562500888688" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/spider/patch_for_shenglv" />
+    <SUITE FILE_PATH="coverage/Library_projects$numeric.coverage" NAME="numeric Coverage Results" MODIFIED="1564538365177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/tensorflow-t/lib/python3.6/site-packages/numpy/core" />
+    <SUITE FILE_PATH="coverage/Library_projects$CRF_bilstm.coverage" NAME="CRF_bilstm Coverage Results" MODIFIED="1564803000782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Ch_NER" />
+    <SUITE FILE_PATH="coverage/Library_projects$patch_1_2.coverage" NAME="patch_1.2 Coverage Results" MODIFIED="1562824324211" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/spider" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/spider/config.py" />
+    <entry file="file://$PROJECT_DIR$/spider/clawer1.py" />
+    <entry file="file://$PROJECT_DIR$/spider/patch_for_shenglv/log.log" />
+    <entry file="file://$PROJECT_DIR$/spider/rabish/dataDJ.csv" />
+    <entry file="file://$PROJECT_DIR$/spider/patch_for_shenglv/read_flag.py" />
+    <entry file="file://$PROJECT_DIR$/spider/patch_for_shenglv/set_flag.py" />
+    <entry file="file://$PROJECT_DIR$/spider/patch_for_shenglv/config.json" />
+    <entry file="file://$PROJECT_DIR$/spider/rabish/clawr.py" />
+    <entry file="file://$PROJECT_DIR$/spider/rabish/stack_data.py" />
+    <entry file="file://$PROJECT_DIR$/TiCai/config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="111" selection-start-column="111" selection-end-column="111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clawer_1.py" />
+    <entry file="file://$PROJECT_DIR$/TiCai/read_temp_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" column="19" lean-forward="true" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TiCai/data.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spider/intoDb.py" />
+    <entry file="file://$PROJECT_DIR$/TiCai/get_tmp_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="137" column="78" selection-start-line="137" selection-start-column="78" selection-end-line="137" selection-end-column="78" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spider/patch_for_shenglv/team_dict.json" />
+    <entry file="file://$PROJECT_DIR$/spider/rabish/test_file.py" />
+    <entry file="file://$PROJECT_DIR$/spider/rabish/set_flag.py" />
+    <entry file="file://$PROJECT_DIR$/spider/new_spider/team_dict.json" />
+    <entry file="file://$PROJECT_DIR$/spider/patch_for_shenglv/patch1.py" />
+    <entry file="file://$PROJECT_DIR$/spider/config.json" />
+    <entry file="file://$PROJECT_DIR$/spider/team_dict.json" />
+    <entry file="file://$PROJECT_DIR$/spider/result.csv" />
+    <entry file="file://$PROJECT_DIR$/spider/rabish/read_flag.py" />
+    <entry file="file://$PROJECT_DIR$/TiCai/spider_1.1/team_dict.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="33" selection-start-column="32" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spider/new_spider/intoDb.py" />
+    <entry file="file://$PROJECT_DIR$/spider/clawer_1.py" />
+    <entry file="file://$PROJECT_DIR$/spider/patch_1.3.py" />
+    <entry file="file://$PROJECT_DIR$/spider_1.1/saved_flag_/DE/read_flag.py" />
+    <entry file="file://$PROJECT_DIR$/spider_1.1/read_flag.py" />
+    <entry file="file://$PROJECT_DIR$/ZN_NER/data_path/original/link.txt" />
+    <entry file="file://$PROJECT_DIR$/TiCai/spider_1.1/clawer_1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="662">
+          <caret line="94" column="26" selection-start-line="94" selection-start-column="26" selection-end-line="94" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TiCai/spider_1.1/intoDb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ch_NER/data/original/test1.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ch_NER/data/original/testright1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python3.6/pickle.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="1541" column="4" selection-start-line="1541" selection-start-column="4" selection-end-line="1541" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/tensorflow-t/lib/python3.6/site-packages/tensorflow/python/ops/init_ops.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="245" column="6" selection-start-line="245" selection-start-column="6" selection-end-line="245" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/tensorflow-t/lib/python3.6/site-packages/tensorflow/nn/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="54" column="52" selection-start-line="54" selection-start-column="52" selection-end-line="54" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/tensorflow-t/lib/python3.6/site-packages/tensorflow/contrib/crf/python/ops/crf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="172" column="4" selection-start-line="172" selection-start-column="4" selection-end-line="172" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/tensorflow-t/lib/python3.6/site-packages/tensorflow/python/training/optimizer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="774">
+          <caret line="440" column="42" selection-start-line="440" selection-start-column="37" selection-end-line="440" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ch_NER/data/train_data">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/tensorflow-t/lib/python3.6/site-packages/numpy/core/numeric.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="497" column="14" lean-forward="true" selection-start-line="497" selection-start-column="14" selection-end-line="497" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/tensorflow-t/lib/python3.6/site-packages/tensorflow/python/ops/rnn_cell_impl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="904" column="6" selection-start-line="904" selection-start-column="6" selection-end-line="904" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ch_NER/data/test_data">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3144">
+          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ch_NER/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/tensorflow-t/lib/python3.6/site-packages/tensorflow/python/training/saver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="1712" selection-start-line="1712" selection-end-line="1712" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ch_NER/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="15" column="30" lean-forward="true" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#6#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ch_NER/process_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1098">
+          <caret line="77" column="26" selection-start-line="77" selection-start-column="26" selection-end-line="77" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/-436661671/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="3746" column="6" selection-start-line="3746" selection-start-column="6" selection-end-line="3746" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ch_NER/CRF_bilstm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="141" column="47" selection-start-line="141" selection-start-column="47" selection-end-line="141" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ch_NER/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="103" selection-start-line="103" selection-end-line="103" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

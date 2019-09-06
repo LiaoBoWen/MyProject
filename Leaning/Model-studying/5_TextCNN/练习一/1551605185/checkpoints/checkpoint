@@ -1,0 +1,2 @@
+model_checkpoint_path: "E:\\codes_together_file\\python file gather\\nlp\\Github\345\255\246\344\271\240\346\225\231\347\250\213\\5_TextCNN\\\347\273\203\344\271\240\344\270\200\\1551605185\\checkpoints/save_net.ckpt"
+all_model_checkpoint_paths: "E:\\codes_together_file\\python file gather\\nlp\\Github\345\255\246\344\271\240\346\225\231\347\250\213\\5_TextCNN\\\347\273\203\344\271\240\344\270\200\\1551605185\\checkpoints/save_net.ckpt"

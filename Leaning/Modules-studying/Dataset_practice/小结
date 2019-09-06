@@ -1,0 +1,2 @@
+shuffle的buffer_size最好大一点，小的buffer_size洗牌效果可能不好
+通常，prefetch的buffer_size取一个小的换成缓存区最有用

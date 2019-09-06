@@ -1,0 +1,48 @@
+1、程序的流程相对完善
+2、英文的分词,去除标点符号、多余的空格，分隔's 're 'll之类的缩写，最后小写化
+3、这里train存在过拟合
+4、evaluation通过tf.train.Saver()创建saver存在问题，使用tf.train.import_meta_graph()解决
+5、通过learn的文本预处理进行word_to_id生成矩阵
+6、TextCNN的搭建的时候维度问题值得注意（类比图片的卷积）
+7、注意维度的增加，是的4个维度的形成
+8、learn.preprocessing.VocabularyProcessor(1000) 生成word2index-Matrix，并可以控制句子的长度（词数），会处理一定的标点，传入的数据是分词后的数据
+##########################################
+##########################################
+from tensorflow.contrib import learn
+import numpy as np
+max_document_length = 4
+x_text =[
+    '你 是 一个 好人',
+    '不，他 是 一个 坏人',
+    '他 是 一个 男人'
+]
+vocab_processor = learn.preprocessing.VocabularyProcessor(max_document_length)
+vocab_processor.fit(x_text)
+print(next(vocab_processor.transform(['他 是 一个'])).tolist())
+x_index = np.array(list(vocab_processor.fit_transform(x_text)))
+print(x_index)
+[6, 2, 3, 0]
+[[1 2 3 4]
+ [5 6 2 3]
+ [6 2 3 8]]
+ ------------------------------------------
+from tensorflow.contrib import learn
+import numpy as np
+max_document_length = 9
+x_text =[
+    '你 是 一个 好人',
+    '不，“他 是 一个 坏人”',
+    '他 是 一个 男人'
+]
+vocab_processor = learn.preprocessing.VocabularyProcessor(max_document_length)
+vocab_processor.fit(x_text)
+print(next(vocab_processor.transform(['他 是 一个'])).tolist())
+x_index = np.array(list(vocab_processor.fit_transform(x_text)))
+print(x_index)
+[6, 2, 3, 0, 0, 0, 0, 0, 0]
+[[1 2 3 4 0 0 0 0 0]
+ [5 6 2 3 7 0 0 0 0]
+ [6 2 3 8 0 0 0 0 0]]
+##########################################
+##########################################
+9、训练过程感觉比较慢~

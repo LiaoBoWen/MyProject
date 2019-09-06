@@ -1,0 +1,16 @@
+keras层面：
+1、Model层的参数需要的是Input层，Model其实就是做了一个自己的小框架，当框架里面的网络参数都训练好了就可以直接使用，所以这里的decoder_infer的输入在predict的时候进行输入
+思想层面：
+2、encoder层使用的是最后一个time_step的[h,c]而不只是仅仅是h
+3、decoder层使用的每一个时间步因为需要输出，需要注意的是这里根据情况需要添加一个Dense层，把结果映射到output大小，最后与target对比
+4、model训练其实是在训练encoder的encode层和decoder的decode层，最后模型预测的时候使用的就是encoder（的LSTM）和decoder（的LSTM）
+5、使用什么评价方法来估计模型的性能 （https://blog.csdn.net/joshuaxx316/article/details/58696552）
+小细节：
+6、训练数据的处理方法和预测的处理方法必须一样，不能多不能少处理字符，不然基于字符的预测后面可能会出现维度问题
+7、注意dense！！！！！
+8、翻译模型得decoder的LSTM层添加Dropout层没有得到很好的效果
+9、decoder的Dense层加入softmax激活函数可以起到更好的效果
+10、当训练的时间较长的话，定期的查看训练效果
+
+
+最后：最终模型的翻译效果不是很好

@@ -1,0 +1,12 @@
+1、基于字符的预测，通过tokenize实现char2id，超过的截取，小于的pad，未知的unk 然后大费周章的进行了id->one-hot化
+2、开始定义Attention Mechanism
+   2.1、定义一个全局的attention layer以便分享这个层给每一个attention step， 首先利用神经网络计算出一个softmax，用于权重的分配（属于比较关键的部分）
+   2.2、Encoder部分：BiLSTM
+   2.3、Decoedr部分：LSTM的c、h初始化，计算attention weights，输出
+3、LSTM的units个数的问题？
+4、特别注意LSTM输出维度问题！
+5、Adam的参数调节至关重要啊！参数调节不好效果奇差，学习率的设置、衰减率，clipnorm，步长的话不要一直在追求小，有时候0.05这样大的步长或许可以取得更好的效果
+
+
+
+注意：当使用了之定义的函数的时候保存模型无法进行读取， 当自定义的是损失函数或者loss函数的话，可以参考：https://blog.csdn.net/dugudaibo/article/details/83034054

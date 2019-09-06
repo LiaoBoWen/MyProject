@@ -1,0 +1,4 @@
+1、数据的划分（分词==>去除停用词==>生成y值的ont-hot）
+2、word2vec，这里使用的是对每句的词向量取平均，但是去平均有什么意义？
+3、通过from sklearn.externals import joblib 保存svm模型
+4、对于预测，使用train相同的word预处理方法

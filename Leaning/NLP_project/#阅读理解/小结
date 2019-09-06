@@ -1,0 +1,6 @@
+Reference: https://github.com/l11x0m7/Question_Answering_Models
+
+1、孪生神经网络
+2、truncated_normal_initializer()初始化
+3、注意、分析激活函数的使用
+4、variable_scope的reuse=tf.AUTO_REUSE和reuse_variables()的作用一致
