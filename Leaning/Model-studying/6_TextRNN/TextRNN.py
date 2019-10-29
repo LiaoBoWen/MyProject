@@ -4,7 +4,7 @@ import numpy as np
 
 class TextRNN:
     def __init__(self,num_classes,learn_rate,batch_size,decay_steps,decay_rate,sequence_length,
-                 vocab_size,embed_size,is_training,initializer=tf.random_normal_initializer(stddev=0.1)):   # todo 这个是啥初始化？
+                 vocab_size,embed_size,is_training,initializer=tf.random_normal_initializer(stddev=0.1)): 
         '''初始化超参数'''
         self.num_classes = num_classes
         self.batch_size = batch_size
@@ -69,21 +69,18 @@ class TextRNN:
         if self.dropout_keep_prob is not None:
             rnn_cell = rnn.DropoutWrapper(rnn_cell,output_keep_prob=self.dropout_keep_prob)
         _, final_state_c_h = tf.nn.dynamic_rnn(rnn_cell,output_rnn,dtype=tf.float32)
-        final_state = final_state_c_h[1]        # todo output 包含隐层的输出，但是state的输出是（C，H）的结构,这里输出H ==>https://www.cnblogs.com/lovychen/p/9294624.html
+        final_state = final_state_c_h[1]     
 
         # 4. FC layer
         output = tf.layers.dense(final_state,self.hidden_size * 2 ,activation=tf.nn.tanh)
 
         # 5. logits(use linear layer)
-        with tf.name_scope('output'):# inputs: a tensor of shape [batch_size,dim]
+        with tf.name_scope('output'):
             logits = tf.matmul(output,self.W_projection) + self.b_projection # [batch_size,num_classes]
         return logits
 
     def loss(self,l2_lambda=1e-4):  # todo 研究一下参数的设置
         with tf.name_scope('loss'):
-            #input: `logits` and `labels` must have the same shape `[batch_size, num_classes]`
-            #output: A 1-D `Tensor` of length `batch_size` of the same type as `logits` with the softmax cross entropy loss.
-
             losses = tf.nn.sparse_softmax_cross_entropy_with_logits(labels=self.input_y,logits=self.logits)
             '''
             sparse_softmax_cross_entropy_with_logits中 lables接受直接的数字标签 
@@ -100,7 +97,6 @@ class TextRNN:
     def loss_nce(self,l2_lambda=1e-4): # 1e-4 ==> 1e-3
         '''使用一种新的损失去计算图 todo NCE_loss '''
         '''tf.nce_loss automatically draws a new sample of the negative labels each'''
-        # time we evaluate the loss
         if self.is_training:
             labels = tf.expand_dims(self.input_y,-1)    # 在最后的维度加一个维度
             loss = tf.reduce_mean(
