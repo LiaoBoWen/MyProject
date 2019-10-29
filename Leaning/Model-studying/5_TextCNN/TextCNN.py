@@ -17,8 +17,8 @@ class TextCNN:
     # 1、 构建中间层，单词转换成向量的形式
         # Embedding layer
         with tf.device('/gpu:0'), tf.name_scope('embedding'):
-            self.W = tf.Variable(tf.random_uniform([vocab_size,embedding_size],-1.0,1.0),name='W')  # todo 为什么第一维要设置为vocab_size?
-            self.embedded_chars = tf.nn.embedding_lookup(self.W,self.input_x)           # 函数解释：https://www.cnblogs.com/gaofighting/p/9625868.html
+            self.W = tf.Variable(tf.random_uniform([vocab_size,embedding_size],-1.0,1.0),name='W') 
+            self.embedded_chars = tf.nn.embedding_lookup(self.W,self.input_x)         
             # 由于进行了embedding_lookup，维度升高了一（None：vocab_size）
             # 增加一个维度（变成4维）[None,sequence_length,embedding_chars,1]  因为语句的话具备1个通道，类似于灰度图片，而不是rgb图片
             self.embedded_chars_expanded = tf.expand_dims(self.embedded_chars,-1)
@@ -63,11 +63,11 @@ class TextCNN:
         with tf.name_scope('output'):
             W = tf.get_variable('W',
                                 shape=[num_filters_total,num_classes],
-                                initializer=tf.contrib.layers.xavier_initializer())     # todo 一般都是用这个方法进行初始化？这是什么初始化 :该函数返回一个用于初始化权重的初始化程序 “Xavier” 。这个初始化器是用来保持每一层的梯度大小都差不多相同。 比如：1 2 3 4 5
+                                initializer=tf.contrib.layers.xavier_initializer())     #这个初始化器是用来保持每一层的梯度大小都差不多相同。 比如：1 2 3 4 5
             b = tf.Variable(tf.constant(0.1,shape=[num_classes],name='b'))
-            # todo 搞不懂搞不懂！ 这是什么奇怪的计算误差的方法？
+        
             l2_loss += tf.nn.l2_loss(W)
-            l2_loss += tf.nn.l2_loss(b)     # todo 为什么b 也要进行正则化？
+            l2_loss += tf.nn.l2_loss(b)     
             self.scores = tf.nn.xw_plus_b(self.h_drop,W,b,name='score')  # todo ?
             self.predictions = tf.argmax(self.scores,1,name='predictioins')
 
