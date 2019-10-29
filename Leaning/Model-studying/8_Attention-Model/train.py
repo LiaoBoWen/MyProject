@@ -75,7 +75,7 @@ at_repeat = RepeatVector(Tx)                    # todo 因为h和a1维度不一�
 at_concatenate = Concatenate(axis=-1)
 at_dense1 = Dense(8,activation='tanh')          # todo 在relu、sigmoid、tanh中tanh表现的最好
 at_dense2 = Dense(1,activation='relu')          # todo 防止多层导致梯度消失
-at_softmax = Activation(softmax,name='attention_weights')   #todo 和吴恩达讲的softmax不一样？
+at_softmax = Activation(softmax,name='attention_weights')   #todo 和吴恩达讲的softmax不一样
 at_dot = Dot(axes=1)    # todo 点积
 
 
@@ -140,7 +140,7 @@ def get_model(Tx,Ty,layer1_size,layer2_size,x_vocab_size,y_vocab_size):
     # Create layers one by one
     X = Input(shape=(Tx,x_vocab_size))    # todo keras自动到第一维度添加None象征数据大小
 
-    a1 = Bidirectional(LSTM(layer1_size,return_sequences=True),merge_mode='concat')(X)      # todo Encoder   输出的什么模样？
+    a1 = Bidirectional(LSTM(layer1_size,return_sequences=True),merge_mode='concat')(X)      # todo Encoder   输出shape?
 
     a2 = attention_layer(a1,layer2_size,Ty)         # todo Decoder
 
