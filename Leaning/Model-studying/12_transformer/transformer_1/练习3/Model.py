@@ -207,79 +207,83 @@ class Transformer:
 
 
     def encoder(self,xs,training=True):
-        x, seqlen = xs
 
-        encode = tf.nn.embedding_lookup(self.embeddings,x)
+        encode = tf.nn.embedding_lookup(self.embeddings,self.xs)
         # scale  缩放
         encode *= self.hp.num_units ** 0.5
 
         encode += self.position_embedding(encode,maxlen=self.hp.maxlen)
-        encode = tf.layers.dropout(encode,self.hp.dropout_rate,training=training)  #dropout'training params
+        encode = tf.layers.dropout(encode,self.dropout_rate,training=training)  #dropout'training params
 
         for i in range(self.hp.num_blocks):
             with tf.variable_scope('num_block_{}'.format(i + 1),reuse=tf.AUTO_REUSE):
                 encode = self.multi_attention(encode,encode,encode,
-                                              num_heads=self.hp.num_heads,dropout_rate=self.hp.dropout_rate,causality=False,training=training)
-                encode = self.feed_forword(encode,filters=[self.hp.dim_feed_forword,self.num_unit])
+                                              num_heads=self.hp.num_heads,causality=False,training=training)
+                encode = self.feed_forword(encode,filters=[self.hp.dim_feed_forword,self.hp.num_units])
 
-        return encode, sents
+        return encode
+
 
 
     def decoder(self,ys,memory,training=True):
-        decoder_inputs, y, seqlen = ys
+        with tf.variable_scope('decoder',reuse=tf.AUTO_REUSE):
+            decode = tf.nn.embedding_lookup(self.embeddings,self.decode_inputs)
+            decode *= self.hp.num_units ** 0.5
+            decode += self.position_embedding(decode,self.hp.maxlen)
 
-        decode = tf.nn.embedding_lookup(self.embeddings,decoder_inputs)
-        decode *= self.hp.num_units ** 0.5
-        decode += self.position_embedding(decode,self.hp.maxlen)
+            decode = tf.layers.dropout(decode,rate=self.dropout_rate,training=training  )
 
-        decode = tf.layers.dropout(decode,rate=self.hp.dropout_rate)
+            for i in range(self.hp.num_blocks):
+                with tf.variable_scope('num_block_{}'.format(i + 1),reuse=tf.AUTO_REUSE):
+                    decode = self.multi_attention(decode,decode,decode,
+                                                  num_heads=self.hp.num_heads,training=training,causality=True,scope='self_attention')
+                    decode = self.multi_attention(decode,memory,memory,
+                                                  num_heads=self.hp.num_heads,training=training,causality=False,scope='vanilla_attention')
+                    decode = self.feed_forword(decode,[self.hp.dim_feed_forword,self.hp.num_units])
 
-        for i in range(self.hp.num_blocks):
-            with tf.variable_scope('num_block_{}'.format(i + 1),reuse=tf.AUTO_REUSE):
-                decode = self.multi_attention(decode,decode,decode,
-                                              num_heads=self.hp.num_heads,dropout_rate=self.hp.dropout_rate,training=training,causality=True,scope='self_attention')
-                decode = self.multi_attention(decode,memory,memory,
-                                              num_heads=self.hp.num_heads,dropout_rate=self.hp.dropout_rate,training=training,causality=False,scope='vanilla_attention')
-                decode = self.feed_forword(decode,[self.hp.dim_feed_forword,self.hp.num_units])
+            logit = tf.layers.dense(decode,len(self.token2ind))
+            y_hat = tf.to_int32(tf.argmax(logit,axis=-1))
 
-        logit = tf.layers.dense(decode,len(self.token2ind))
-        y_hat = tf.to_int32(tf.argmax(logit,axis=-1))
-
-        return logit, y_hat, y, sents
+            return logit, y_hat
 
 
     def train(self,xs,ys):
-        memory, sents_x = self.encoder(xs)
+        memory = self.encoder()
 
-        logit, y_hat, y, sents_y = self.decoder(ys,memory)
+        logit, self.y_hat = self.decoder(memory)
 
-        y_ = self.label_smooth(tf.one_hot(y,depth=len(self.idx2token)))
-        self.loss = tf.nn.softmax_cross_entropy_with_logits(logits=logit,labels=y_)
+        y_ = self.label_smooth(tf.one_hot(self.ys,depth=self.hp.vocab_size))
+        loss = tf.nn.softmax_cross_entropy_with_logits(logits=logit,labels=y_)
+        nopadding = tf.to_float(tf.not_equal(self.ys,self.token2ind['<PAD>']))
+        self.loss = tf.reduce_sum(loss * nopadding) / (tf.reduce_sum(nopadding) + 1e-7)
 
         self.global_step = tf.train.get_or_create_global_step()
-        self.optimizer = tf.train.AdamOptimizer(self.hp.lr,beta1=0.9,beta2=0.98,epsilon=1e-8)
+        lr = self.noam_scheme(self.hp.lr,self.global_step,self.hp.warmup_step)
+        self.optimizer = tf.train.AdamOptimizer(lr)
         self.train_op = self.optimizer.minimize(self.loss,global_step=self.global_step)
 
 
 
+        tf.summary.scalar('learning_rate',lr)
+        tf.summary.scalar('loss',self.loss)
+
+        self.summary = tf.summary.merge_all()
+
+
+
     def eval(self,xs,ys):
-        decode_input, y, y_seqlen, sent2 = ys
-
-        decode_input = tf.ones(tf.shape(xs[0])[0],1) * self.token2ind('<S>')
-        ys = (decode_input, y, y_seqlen, sent2)
-
-        memory, sent1 = self.encoder(xs,training=False)
+        self.decode_inputs = tf.ones((tf.shape(self.xs)[0],1),tf.int32) * self.token2ind['<S>']
+        temp_decode = self.decode_inputs
+        memory = self.encoder(training=False)
 
         # generate
-        for _ in tqdm(range(self.hp.maxlen)):
-            logit, y_hat, y, sent2 = self.decoder(ys,memory,training=False)
+        for _ in range(10):
+            logit, self.y_hat = self.decoder(memory,training=False)
+            self.decode_inputs = tf.concat([temp_decode, self.y_hat],1)           # 每次循环一次都会会增加一个字
 
-            if tf.reduce_sum(y_hat,1) == self.token2ind['<PAD>']:       # 倒数第二个维度（当所有的字）都预测为pad的时候，停止预测。所有的xs都预测完毕
-                break
-            _decode_input = tf.concat([decode_input,y_hat],1)           # 每次循环一次都会会增加一个字
-            ys = (_decode_input, y, y_seqlen,sent2)
 
-        pred = []
-        for y in ys:
-            pred.append(convert_id_to_token(y,self.idx2token))
-
+        # pred = []
+        # for y in y_hat:
+        #     pred.append(convert_id_to_token(y,self.idx2token))
+        #
+        # return y_hat
