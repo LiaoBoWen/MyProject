@@ -68,7 +68,7 @@ class TextRCNN:
             )
             b4 = tf.Variable(tf.constant(0.1,shape=[self.num_classes]),name='b4')
             l2_loss += tf.nn.l2_loss(W4)
-            l2_loss += tf.nn.l2_loss(b4)    # todo 干嘛?
+            l2_loss += tf.nn.l2_loss(b4)   
             self.scores = tf.nn.xw_plus_b(self.y3,W4,b4,name='scores')
             self.predictions = tf.argmax(self.scores,1,name='predictions')
 
