@@ -11,7 +11,7 @@ class HAN:
         self.num_classes = num_classes
         self.max_seq_len = max_seq_len
         self.embedding_size = embedding_size
-        self.word_encoder_num_hidden = max_seq_len  # todo hidden == max_seq_len ??
+        self.word_encoder_num_hidden = max_seq_len  
         self.word_output_size = max_seq_len
         self.sentence_encoder_num_hidden = max_sent_len
         self.sentence_output_size = max_sent_len
@@ -19,16 +19,16 @@ class HAN:
         self.dropout_keep_proba = dropout_proba
 
         # Input
-        self.input_x = tf.placeholder(shape=[None,None,None], # todo shape 3 None?
+        self.input_x = tf.placeholder(shape=[None,None,None],
                                       dtype=tf.int32,
                                       name='input_x')
         self.input_y = tf.placeholder(shape=[None,self.num_classes],
                                       dtype=tf.int32,
                                       name='input_y')
-        self.word_lengths = tf.placeholder(shape=[None,None], # todo shape 2 None ?      what to do ?
+        self.word_lengths = tf.placeholder(shape=[None,None],
                                            dtype=tf.int32,
                                            name='word_lengths')
-        self.sentence_lengths = tf.placeholder(shape=[None,],   # todo shape 1 None?     what to do ?
+        self.sentence_lengths = tf.placeholder(shape=[None,],  
                                                dtype=tf.int32,
                                                name='sentence_lengths')
         self.is_training = tf.placeholder(dtype=tf.bool,
@@ -105,7 +105,7 @@ class HAN:
                                                                                                inputs=inputs,
                                                                                                dtype=tf.float32,
                                                                                                time_major=True)
-            encoder_outputs = tf.concat([encoder_fw_outputs,encoder_bw_outputs],2) # todo 维度问题
+            encoder_outputs = tf.concat([encoder_fw_outputs,encoder_bw_outputs],2)
             return encoder_outputs
 
 
