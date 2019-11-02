@@ -8,6 +8,7 @@ from data_processor import load_processed_data
 from data_processor import load_vocab
 from data_processor import get_batch
 from hyperparams import Params
+from data_processor import make_token
 
 
 class Model:
@@ -350,7 +351,38 @@ def train():
 
                 if global_step % Params.print_per_batch == 0:
                     print('Global_step:{} Epoch:{} loss:{}'.format(global_step, epoch_i + 1, loss))
+                    
+                    
+def predict():
+    with tf.Session() as sess:
+        model = Model(token2id, Params.batch_size, Params.hidden_size, Params.learning_rate, len(token2id))
+        saver = tf.train.Saver(max_to_keep=3)
+
+        checkpoint = tf.train.latest_checkpoint(save_path)
+        saver.restore(sess, checkpoint)
+
+        while True:
+            inputs = input('>>')
+            if not inputs.strip():
+                return
+
+            x, y, x_lens, y_lens = make_token([inputs], [''])
+            x = np.array(x)
+            x_lens = np.array(x_lens)
+            y_lens = np.array(y_lens)
+
+            feed_dict = {model.input_data: x,
+                         model.text_length: x_lens,
+                         model.summary_length:y_lens,
+                         model.keep_prob: 1.}
+            pred = sess.run(model.inference_logits, feed_dict=feed_dict)[0]
+
+            result = ''
+            for i in pred:
+                result += id2token[i]
+            print(result)
 
 
 if __name__ == '__main__':
-    train()
+#     train()
+    preedict()
